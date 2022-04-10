@@ -1,0 +1,11 @@
+{% extends 'flatpages/default.html' %}
+{% block title %}
+Новости
+{% endblock title %}
+
+{% block content %}
+<strong>{{ Post.title }}</strong> <br>
+{{ Post.text }}<br>
+<span style="color: #999999;">{{ Post.dateCreation }}</span><br>
+{% endblock content %}
+
