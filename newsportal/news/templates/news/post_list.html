@@ -1,6 +1,15 @@
 {% extends 'flatpages/default.html' %}
+{% block title %}
+Новости
+{% endblock title %}
 
 {% block content %}
 {{ posts }}
+{% for new in news %}
+<p>{{ new.title }}</p>
+<a href="{{ new.get_absolute_url }}">News url</a>
+{% endfor %}
+
+
 {% endblock content %}
 
