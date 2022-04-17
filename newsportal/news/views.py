@@ -8,6 +8,7 @@ class PostList(ListView):
    model = Post
    context_object_name = 'news'
    template_name = 'news.html'
+   queryset = Post.objects.order_by('-id')
 
 
 class AuthorList(ListView):

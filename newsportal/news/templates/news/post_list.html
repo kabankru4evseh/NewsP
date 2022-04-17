@@ -1,15 +1,20 @@
 {% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+
 {% block title %}
 Новости
 {% endblock title %}
 
 {% block content %}
-{{ posts }}
-{% for new in news %}
-<p>{{ new.title }}</p>
-<a href="{{ new.get_absolute_url }}">News url</a>
-{% endfor %}
+<h1>Новости</h1>
 
+{% for new in news %}
+{{ new.title|censor }} <span style="color:  #999999;">{{ new.dateCreation }}</span> {{ new.text|truncatechars:50|censor }}
+<a href="{{ new.get_absolute_url }}">Читать дальше</a>
+<p></p>
+{% endfor %}
+<p><span style="color: #ffffff;">&macr;\_(ツ)_/&macr;</span></p>
 
 {% endblock content %}
+
 

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'fpages',
     'news',
     'accounts',
+
 ]
 
 SITE_ID = 1

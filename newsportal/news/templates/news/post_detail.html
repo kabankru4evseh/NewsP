@@ -1,11 +1,14 @@
 {% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+
+
 {% block title %}
 Новости
 {% endblock title %}
 
 {% block content %}
-<strong>{{ Post.title }}</strong> <br>
-{{ Post.text }}<br>
+<strong>{{ Post.title|censor }}</strong> <br>
+{{ Post.text|censor }}<br>
 <span style="color: #999999;">{{ Post.dateCreation }}</span><br>
 {% endblock content %}
 
